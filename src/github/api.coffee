@@ -13,6 +13,11 @@ Github = (($) ->
         callback(response.data)
       )
 
+
+    @get_user: (user, callback) ->
+      @get("/users/#{user}", (response) ->
+        callback(response.data)
+      )
     
     @get_repos: (user, callback) ->
       @get("/users/#{user}/repos", (response) ->

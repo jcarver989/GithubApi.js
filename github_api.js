@@ -21,6 +21,12 @@ Github = (function($) {
       });
     };
 
+    API.get_user = function(user, callback) {
+      return this.get("/users/" + user, function(response) {
+        return callback(response.data);
+      });
+    };
+
     API.get_repos = function(user, callback) {
       return this.get("/users/" + user + "/repos", function(response) {
         return callback(response.data);
